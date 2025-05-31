@@ -3,8 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <title>SuzusakiRin.github.io</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <style>
+        .section {
+            padding: 60px 0;
+        }
+        .bg-light-subtle {
+            background-color: #f8f9fa;
+        }
+        .bg-light-blue {
+            background-color: #e6f2ff; /* より濃い青みがかった背景色 */
+        }
+        .event-card {
+            border-left: 4px solid #0d6efd;
+            margin-bottom: 15px;
+            background-color: #ffffff; /* カード自体は白背景に */
+        }
+    </style>
 </head>
+
+<header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary py-3">
+        <div class="container-fluid">
+            <a class="navbar-brand fs-4" href="#">SuzusakiRin</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active fs-5 px-3" aria-current="page" href="#">ホーム</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-5 px-3" href="deliverables">成果物</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-5 px-3" href="contact">連絡</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-5 px-3" href="other">その他</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
 <body>
-<a href="2s_programming2">ﾌﾟﾛｸﾞﾗﾐﾝｸﾞ2ﾘﾝｸ</a>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8 mx-auto text-center">
+            <h1 class="display-4 fw-bold mb-4">鈴崎 燐</h1>
+            <p class="lead mb-4">ウェブ開発者 & イベントオーガナイザー</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="https://github.com/SuzusakiRin" target="_blank" class="btn btn-outline-dark">GitHub</a>
+                <a href="contact" class="btn btn-primary">連絡</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="text-center mb-4">自己紹介</h2>
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <p>はじめまして、鈴崎凛と申します。フロントエンド開発を専門とするウェブ開発者です。HTML、CSS、JavaScriptを中心に、React、Vue.jsなどのモダンフレームワークを使用したウェブアプリケーション開発に取り組んでいます。</p>
+                        <p>また、テクノロジーイベントの企画・運営にも積極的に関わっており、コミュニティ活動を通じて知識の共有と技術の発展に貢献したいと考えています。</p>
+                        <p><h4>↑これAIが勝手に生成しててわろ</h4></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section bg-light-blue">
+    <div class="container">
+        <h2 class="text-center mb-4">直近のイベント運営予定</h2>
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="card shadow-sm event-card p-3 mb-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h3 class="h5 mb-0">横浜市鬼ごっこ</h3>
+                        <span class="badge bg-primary">2024年8月24日</span>
+                    </div>
+                    <p class="mb-0">詳細未発表</p>
+                </div>
+
+                <div class="card shadow-sm event-card p-3 mb-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h3 class="h5 mb-0">高専情報カンファレンスin金沢</h3>
+                        <span class="badge bg-primary">2024年9月01日</span>
+                    </div>
+                    <p class="mb-0">すぶた主催の高専カンファレンスの広報を務めております</p>
+                </div>
+
+                <div class="card shadow-sm event-card p-3">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h3 class="h5 mb-0">高専カンファレンス言語学</h3>
+                        <span class="badge bg-primary">2024年12月26日</span>
+                    </div>
+                    <p class="mb-0">Coming soon...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 mx-auto text-center">
+                <h2 class="mb-4">お問い合わせ</h2>
+                <p class="mb-4">イベント参加、コラボレーション、お仕事の依頼など、お気軽にご連絡ください。</p>
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                    <a href="mailto:suzusaki.rin@gmail.com" class="btn btn-primary btn-lg px-4 gap-3">メールでのお問い合わせ</a>
+                    <a href="contact" class="btn btn-outline-secondary btn-lg px-4">お問い合わせページ</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="py-4 bg-dark text-white">
+    <div class="container text-center">
+        <p class="mb-0">© 2024 鈴崎燐 . All rights reserved.</p>
+    </div>
+</footer>
 </body>
 </html>
