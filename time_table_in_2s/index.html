@@ -22,6 +22,11 @@
                 font-size: 0.7rem;
             }
         }
+        .current-period {
+            background-color: #ffeb3b !important;
+            font-weight: bold;
+            box-shadow: inset 0 0 10px rgba(255, 235, 59, 0.8);
+        }
     </style>
 </head>
 
@@ -77,4 +82,54 @@
         </table>
         </div>
     </div>
+
+    <script>
+        function highlightCurrentPeriod() {
+            const now = new Date();
+            const dayOfWeek = now.getDay(); // 0=日曜, 1=月曜, 2=火曜, 3=水曜, 4=木曜, 5=金曜, 6=土曜
+            const currentTime = now.getHours() * 100 + now.getMinutes(); // HHmm形式
+
+            // 授業時間の定義（開始時間と終了時間）
+            const periods = [
+                { start: 845, end: 1020 },   // 1限: 8:50-9:40
+                { start: 1025, end: 1200 },  // 2限: 9:50-10:40
+                { start: 1255, end: 1430 }, // 3限: 10:50-11:40
+                { start: 1440, end: 1610 }  // 4限: 12:50-13:40
+            ];
+
+            // 平日のみ処理（月曜=1から金曜=5）
+            if (dayOfWeek >= 1 && dayOfWeek <= 5) {
+                // 現在時刻が授業時間内かチェック
+                for (let i = 0; i < periods.length; i++) {
+                    if (currentTime >= periods[i].start && currentTime <= periods[i].end) {
+                        // 該当する時限の該当する曜日のセルをハイライト
+                        const row = i + 1; // 1限=行1、2限=行2...
+                        const col = dayOfWeek; // 月曜=1、火曜=2...
+
+                        // テーブルの該当セルを取得
+                        const table = document.querySelector('table tbody');
+                        const targetCell = table.rows[i].cells[col];
+
+                        if (targetCell) {
+                            targetCell.classList.add('current-period');
+                        }
+                        break;
+                    }
+                }
+            }
+        }
+
+        // ページ読み込み時に実行
+        document.addEventListener('DOMContentLoaded', highlightCurrentPeriod);
+
+        // 1分ごとに更新
+        setInterval(() => {
+            // 既存のハイライトを削除
+            document.querySelectorAll('.current-period').forEach(cell => {
+                cell.classList.remove('current-period');
+            });
+            // 新しいハイライトを適用
+            highlightCurrentPeriod();
+        }, 60000);
+    </script>
 </body>
